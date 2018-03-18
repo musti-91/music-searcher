@@ -1,0 +1,209 @@
+@import "base/reset";
+@import "base/fonts";
+@import "base/mixins";
+@import "base/variables";
+// $myFavouriteColor: #4d79ff
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+}
+.container {
+  transition: all 300ms;
+  width: 1400px;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  h1 {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 50px;
+    font-family: sans-serif;
+  }
+}
+form {
+  transition: all 300ms;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  input {
+    transition: all 300ms;
+    width: 70%;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    background-color: lightgrey;
+    padding: 10px;
+    color: #000;
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-right: 50px;
+    &:hover {
+      border: 1px solid $myFavouriteColor;
+    }
+  }
+  button {
+    transition: all 300ms;
+    border: 0;
+    width: 7%;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: $myFavouriteColor;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 20px;
+  }
+}
+#audioHolder {
+  @include make-columns(3, 10px);
+}
+.track-id {
+  transition: all 300ms;
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: grey;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 30px;
+  &:last-child {
+    margin-right: auto;
+  }
+  div.imgHolder {
+    transition: all 300ms;
+    width: 45%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 3px;
+    img {
+      @include responsive;
+      border-radius: 5px;
+    }
+  }
+  div.details {
+    transition: all 300ms;
+    width: 50%;
+    h2,
+    h3 {
+      width: 100%;
+      font-family: sans-serif;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      font-size: 20px;
+    }
+    audio {
+      width: 100%;
+      margin-top: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .container {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  form {
+    width: 90%;
+    input {
+      width: 80%;
+    }
+    button {
+      width: 10%;
+    }
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .container {
+    width: 90%;
+  }
+  .track-id {
+    div.imgHolder {
+      width: 100%;
+    }
+    div.details {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    width: 90%;
+  }
+  #audioHolder {
+    @include make-columns(2, 10px);
+  }
+  form {
+    width: 100%;
+    input {
+      width: 70%;
+      margin-right: 10px;
+    }
+    button {
+      width: 20%;
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .container {
+    width: 95%;
+  }
+  #audioHolder {
+    @include make-columns(1, 10px);
+  }
+  h3 {
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .container {
+    h1 {
+      font-size: 30px;
+    }
+  }
+  form {
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .container {
+    width: 90%;
+    h1 {
+      font-size: 30px;
+    }
+  }
+  form {
+    input {
+      width: 65%;
+    }
+    button {
+      width: 30%;
+    }
+  }
+  .track-id {
+    padding: 10px;
+    width: 75%;
+    div.imgHolder {
+      width: 100%;
+    }
+    div.details {
+      width: 100%;
+      h2,
+      h3 {
+        margin-bottom: 10px;
+      }
+      audio {
+        width: 100%;
+      }
+    }
+  }
+}
